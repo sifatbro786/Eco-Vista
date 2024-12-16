@@ -7,8 +7,8 @@ export default function RootLayout({ children, weather, aqi, wind, temperature }
             <div className="overlay"></div>
             <Image
                 src="/background.png"
-                className="bg-img"
                 alt="background-image"
+                className="bg-img"
                 width={700}
                 height={1200}
             />

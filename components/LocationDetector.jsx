@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 
-const LocationDetector = () => {
+export default function LocationDetector() {
     const [loading, setLoading] = useState(false);
 
     const searchParams = useSearchParams();
@@ -28,19 +28,15 @@ const LocationDetector = () => {
     return (
         <div className="flex flex-col justify-center items-center h-screen bg-slate-700 text-white">
             {loading && (
-                <>
-                    <Image
-                        src="/network.gif"
-                        alt="Loading..."
-                        height={500}
-                        width={500}
-                        className="border rounded-md my-4"
-                    />
-                    <p className="text-4xl text-center">Detecting Location...</p>
-                </>
+                <Image
+                    src="/network.gif"
+                    alt="Loading..."
+                    height={500}
+                    width={500}
+                    className="border rounded-md my-4"
+                    unoptimized
+                />
             )}
         </div>
     );
-};
-
-export default LocationDetector;
+}
